@@ -37,3 +37,17 @@ class User(AbstractUser):
 
     def __str__(self):
         return str(self.username)
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    alias_name = models.CharField(max_length=100)
+    profile_text = models.CharField(max_length=255)
+    profile_image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
+
+    class Meta:
+        verbose_name_plural = 'Profile'
+        db_table = 'Profile'
+
+    def __str__(self):
+        return self.email
