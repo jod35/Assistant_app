@@ -11,6 +11,8 @@ class SignUpSerializer(serializers.ModelSerializer):
     first_name = serializers.CharField(max_length=50)
     last_name = serializers.CharField(max_length=50)
     email = serializers.EmailField()
+    address = serializers.CharField(max_length=20)
+    zip_code = serializers.IntegerField()
     password = serializers.CharField(min_length=8, write_only=True)
 
     class Meta:
