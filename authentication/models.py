@@ -10,9 +10,13 @@ class User(AbstractUser):
     city_name = models.CharField(max_length=50, default='test')
 
 
-    objects = CustomUserManager()
-    USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ["username"]
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'Address', 'zip_code', 'city_name', 'password']
+    
+
+    class Meta:
+        verbose_name_plural = 'users'
+        db_table = 'users'
 
     def __str__(self):
         return self.username
