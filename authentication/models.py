@@ -5,12 +5,12 @@ from django.contrib.auth.models import (BaseUserManager, AbstractUser)
 
 # Manager for users
 class UserProfileManager(BaseUserManager):
-    def create_superuser(self, first_name, last_name, email, phone, password):
-        if not email or not first_name or not last_name or not phone:
+    def create_superuser(self, first_name, last_name, email, Address, password):
+        if not email or not first_name or not last_name or not Address:
             raise ValueError('All fields are required')
 
         email = self.normalize_email(email)
-        user = self.model(first_name=first_name, last_name=last_name, phone=phone, email=email)
+        user = self.model(first_name=first_name, last_name=last_name, email=email)
         user.set_password(password)
         user.is_superuser = True
         user.is_staff = True
@@ -24,7 +24,9 @@ class User(AbstractUser):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
-    phone = models.IntegerField()
+    Address = models.CharField(max_length=75, default='test')
+    zip_code = models.IntegerField(default='1')
+    city_name = models.CharField(max_length=50, default='test')
     username = None
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -34,7 +36,7 @@ class User(AbstractUser):
     objects = UserProfileManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'phone', 'password']
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'Address', 'zip_code', 'city_name', 'password']
     
 
     class Meta:

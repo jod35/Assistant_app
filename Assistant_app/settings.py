@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "dreng",
+    "Assistant_app",
     "authentication",
     # third-party-apps
     "rest_framework",
@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'dreng.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'dreng',
+        'NAME': 'Assistant_app',
         'USER': 'hans',
         'PASSWORD': 'hans2007',
         'HOST': 'localhost',
