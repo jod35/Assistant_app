@@ -93,11 +93,15 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 43420d3 (new updated code)
         'NAME':config('DATABASE_NAME'),
         'USER': config('DATABASE_USER'),
         'PASSWORD': config('DATABASE_PASSWORD'),
         'HOST':config('DATABASE_HOST'),
         'PORT': config('DATABASE_PORT'),
+<<<<<<< HEAD
 =======
         'NAME': 'Assistant_app',
         'USER': 'hans',
@@ -105,6 +109,8 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '3306',
 >>>>>>> be00530 (new code, need fixing)
+=======
+>>>>>>> 43420d3 (new updated code)
 }
 }
 

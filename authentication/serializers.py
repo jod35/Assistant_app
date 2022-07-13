@@ -11,13 +11,11 @@ class SignUpSerializer(serializers.ModelSerializer):
     first_name = serializers.CharField(max_length=50)
     last_name = serializers.CharField(max_length=50)
     email = serializers.EmailField()
-    address = serializers.CharField(max_length=20)
-    zip_code = serializers.IntegerField()
     password = serializers.CharField(min_length=8, write_only=True)
 
     class Meta:
         model = User
-        fields = ['id', 'first_name', 'last_name', 'email', 'Address', 'zip_code' 'password']
+        fields = ['first_name', 'last_name', 'email', 'password']
 
     # Check if email already exists in database
     def validate(self, attrs):
