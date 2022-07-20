@@ -1,3 +1,4 @@
+from urllib import response
 from django.contrib.auth import authenticate
 from django.shortcuts import render
 from django.contrib.sites.shortcuts import get_current_site
@@ -11,6 +12,7 @@ from rest_framework import generics, status
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.decorators import api_view
 
 
 from .serializers import SignUpSerializer,SetNewPasswordSerializer
