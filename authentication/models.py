@@ -40,4 +40,4 @@ class User(AbstractUser):
 
 
 class Profile(models.Model):
-    pass
+    user = models.OneToOneField()
